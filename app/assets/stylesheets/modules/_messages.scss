@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.side-bar {
+  height: 100vh;
+  width: 300px;
+  color: #ffffff;
+  font-weight: bold;
+
+  .user-name {
+    background-color: #253141;
+    font-size: 16px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    .top-items {
+      height: 20px;
+      width: 260px;
+      display: flex;
+      justify-content: space-between;
+
+      .name {
+        width: 200px;
+        line-height: 20px;
+      }
+
+      .icons {
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+
+        &__btn {
+          display: block;
+          line-height: 20px;
+
+          &--icon {
+            color: #fff;
+            line-height: 20px;
+          }
+
+          &--edit {
+            margin-right: 5px;
+          }
+
+          &--cog {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .groups {
+    background-color: #2f3e51;
+    height: calc(100vh - 100px);
+
+    .group-lists {
+      padding: 20px 20px 40px;
+
+      .group-name {
+        font-size: 15px;
+      }
+
+      .last-message {
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+}
+
+.chat-main {
+  background-color: #ffffff;
+  height: 100vh;
+  width: calc(100% - 300px);
+
+  .group-info {
+    height: 100px;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+
+    .main-left {
+      margin: 35px 0px 0px 40px;
+
+      .current-group {
+        font-size: 20px;
+        color: #333333;
+      }
+    }
+  }
+
+  .message-list {
+    background-color: #fafafa;
+    height: calc(100vh - 100px - 90px);
+  }
+
+  .message-form {
+    background-color: #d2d2d2;
+    height: 90px;
+    padding-bottom: 0;
+    color: red;
+  }
+}

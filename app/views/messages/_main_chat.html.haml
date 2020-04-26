@@ -1,0 +1,26 @@
+.chat-main
+  .group-info
+    .left-box
+      .current-group グループ名 techtechtechtech
+      .member-list member: taro
+    .right-box
+      = link_to "#", class: "right-box__btn" do
+        Edit
+  .message-list
+    .messages
+      .message-info
+        %p.message-info__member taro
+        %p.message-info__date yyyy/mm/dd
+      %p.messages__text おはよううううううううううううううううううううううううううう
+  .message-form
+    .form
+      .new-message
+        .message-box
+          %input{class: "message-box__input", placeholder: "type a message", type: "text"}
+        .message-icon
+          %label{class: "message-icon__image"}
+            = link_to "#", class: "message-icon__btn" do
+              = icon('far', 'image', class: "message-icon__btn")
+      .send-box
+        = link_to "#", class: "send-box__btn" do
+          Send

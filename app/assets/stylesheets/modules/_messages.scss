@@ -13,7 +13,6 @@
 
     .user-name {
       background-color: #253141;
-      font-size: 16px;
       height: 100px;
       display: flex;
       align-items: center;
@@ -22,12 +21,15 @@
       .top-items {
         height: 20px;
         width: 260px;
+        font-size: 16px;
         display: flex;
         justify-content: space-between;
 
         .name {
           width: 200px;
           line-height: 20px;
+          font-weight: bold;
+
         }
 
         .icons {
@@ -35,13 +37,11 @@
           display: flex;
           justify-content: flex-end;
 
-          &__btn {
-            display: block;
+          .list {
             line-height: 20px;
 
             &--icon {
               color: #fff;
-              line-height: 20px;
             }
 
             &--edit {

@@ -1,26 +1,23 @@
 .chat-main
   .group-info
     .left-box
-      .current-group グループ名 techtechtechtech
-      .member-list member: taro
-    .right-box
-      = link_to "#", class: "right-box__btn" do
+      %p.current-group グループ名 techtechtechtechkkkkkkkkkkkkkkkk
+      %p.member-list member: taro
+    .edit
+      = link_to "#", class: "edit__btn" do
         Edit
   .message-list
     .messages
-      .message-info
-        .message-info__member taro
-        .message-info__date yyyy/mm/dd
+      %ul.message-info
+        %li.message-info__member taro
+        %li.message-info__date yyyy/mm/dd
       .messages__text おはよううううううううううううううううううううううううううう
   .message-form
     .form
-      .new-message
+      %form.new-message
         .message-box
           %input{class: "message-box__input", placeholder: "type a message", type: "text"}
-        .message-icon
-          %label{class: "message-icon__image"}
-            = link_to "#", class: "message-icon__btn message-icon__image" do
-              = icon('far', 'image', class: "message-icon--btn message-icon__image")
-      .send-box
-        = link_to "#", class: "send-box__btn" do
-          Send
+          %label{class: "message-box__image", title: "画像を添付"}
+            = icon('far', 'image', class: "message-box__icon")
+            %input{type: "file", class: "message-box__btn"}
+        %input{type: "submit", class: "send-btn", value: "Send", title: "メッセージを送信"}

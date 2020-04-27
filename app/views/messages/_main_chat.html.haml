@@ -19,8 +19,8 @@
           %input{class: "message-box__input", placeholder: "type a message", type: "text"}
         .message-icon
           %label{class: "message-icon__image"}
-            = link_to "#", class: "message-icon__btn" do
-              = icon('far', 'image', class: "message-icon__btn")
+            = link_to "#", class: "message-icon__btn message-icon__image" do
+              = icon('far', 'image', class: "message-icon--btn message-icon__image")
       .send-box
         = link_to "#", class: "send-box__btn" do
           Send

@@ -65,6 +65,7 @@
 
         .group-name {
           font-size: 15px;
+          padding-right: 112px;
         }
 
         .last-message {
@@ -78,20 +79,18 @@
   .chat-main {
     background-color: #ffffff;
     height: 100vh;
-    width: 100%;
+    width: calc(100vw - 300px);
 
     .group-info {
       height: 100px;
+      width: 100%;
       border-bottom: 1px solid #eeeeee;
       display: flex;
       justify-content: space-between;
-      z-index: 1;
+      padding: 0 40px;
 
       .left-box {
-        height: 100px;
-        width: calc(100vw - 300px - 112px);
-        margin-top: 35px;
-        padding-left: 40px;
+        padding-top: 35px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -108,23 +107,21 @@
         }
       }
 
-      .right-box {
-        text-align: center;
-        padding-right: 120px;
-        position: relative;
+      .edit {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         &__btn {
-          display: block;
           height: 40px;
-          line-height: 40px;
-          margin-right: 40px;
-          margin-top: 28px;
+          width: 72px;
           padding: 0 20px;
           border: 1px solid #38aef0;
           text-decoration: none;
+          line-height: 40px;
           font-size: 16px;
           color: #38aef0;
-          position: absolute;
         }
       }
     }
@@ -133,7 +130,7 @@
       background-color: #fafafa;
       height: calc(100vh - 100px - 90px);
       width: calc(100vw - 300px);
-      padding: 35px 40px;
+      padding: 35px 0 0 40px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -170,77 +167,67 @@
     .message-form {
       background-color: #d2d2d2;
       height: 90px;
-      width: 100%;
-      align-items: center;
+      width: calc(100vw - 300px);
       padding: 0 40px;
 
       .form {
         height: 90px;
-        line-height: 90px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
 
         .new-message {
-          height: 90px;
-          width: calc(100vw - 380px - 100px);
+          width: 100%;
           display: flex;
-          overflow: hidden;
-          white-space: nowrap;
-          text-overflow: ellipsis;
-          position: relative;
 
           .message-box {
-            height: 90px;
+            height: 50px;
             width: 100%;
+            margin-right: 15px;
+            display: flex;
+            position: relative;
 
             &__input {
-              height: 50px;
-              width: 100%;
               display: inline-block;
               vertical-align: middle;
+              width: 100%;
               padding: 0 45px 0 10px;
+              font-size: 1.5em;
             }
-          }
-
-          .message-icon {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            height: 35px;
-            width: 35px;
-            margin-right: 10px;
 
             &__image {
-              position: absolute;
-              font-size: 35px;
               height: 35px;
               width: 35px;
+              font-size: 35px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              margin: auto;
+              margin-right: 10px;
+              cursor: pointer;
             }
 
-            &--btn {
-              color: #333333;
-              text-decoration: none;
+            &__icon {
+              position: absolute;
+            }
+
+            &__btn {
+              display: none;
             }
           }
-        }
 
-        .send-box {
-          height: 90px;
-          line-height: 90px;
-          text-align: center;
-
-          &__btn {
-            display: inline-block;
-            vertical-align: middle;
+          .send-btn {
             height: 50px;
             width: 100px;
-            line-height: 50px;
             background-color: #38aef0;
-            text-decoration: none;
             font-size: 16px;
             color: #ffffff;
-            margin-left: 15px;
+            cursor: pointer;
           }
         }
       }

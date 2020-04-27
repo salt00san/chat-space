@@ -1,12 +1,15 @@
 .side-bar
   .user-name
     .top-items
-      .name taro
-      .icons
-        = link_to "#", class: "icons__btn icons__btn--edit" do
-          = icon('fas', 'edit',  class: "icons__btn--icon") 
-        = link_to "#", class: "icons__btn icons__btn--cog" do
-          = icon('fas', 'cog',  class: "icons__btn--icon") 
+      %h3.name
+        = current_user.name
+      %ul.icons
+        %li.list
+          = link_to "#", class: "list--icon" do
+            = icon('fas', 'edit',  class: "list--edit") 
+        %li.list
+          = link_to edit_user_path(current_user), class: "list--icon" do
+            = icon('fas', 'cog',  class: "list--cog") 
   .groups
     %ul.group-lists
       %li.group-main グループ名

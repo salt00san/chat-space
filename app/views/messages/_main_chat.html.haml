@@ -1,23 +1,25 @@
 .chat-main
   .group-info
     .left-box
-      %p.current-group グループ名 techtechtechtechkkkkkkkkkkkkkkkk
-      %p.member-list member: taro
+      %h2.current-group
+        = @group.name
+        %ul.member-lists
+          Member：
+          - @group.users.each do |user|
+            %li.member-list
+              = user.name
     .edit
-      = link_to "#", class: "edit__btn" do
+      = link_to edit_group_path(@group), class: "edit__btn", title: "グループを編集" do
         Edit
   .message-list
     .messages
-      %ul.message-info
-        %li.message-info__member taro
-        %li.message-info__date yyyy/mm/dd
-      .messages__text おはよううううううううううううううううううううううううううう
-  .message-form
-    .form
-      %form.new-message
-        .message-box
-          %input{class: "message-box__input", placeholder: "type a message", type: "text"}
-          %label{class: "message-box__image", title: "画像を添付"}
-            = icon('far', 'image', class: "message-box__icon")
-            %input{type: "file", class: "message-box__btn"}
-        %input{type: "submit", class: "send-btn", value: "Send", title: "メッセージを送信"}
+      = render @messages
+  .form
+    = form_for [@group, @message] do |f|
+      .new_message
+        = f.text_field :content, class: 'message-box', placeholder: 'type a message', title: "メッセージを書く"
+        .images-form
+          = f.label :image, class: 'images-form__image', title: '画像を添付' do
+            = icon('far', 'image', class: 'images-form__icon')
+            = f.file_field :image, class: 'images-form__btn', accept:"image/*"
+      = f.submit 'Send', class: "send-btn", title: "メッセージを送信"

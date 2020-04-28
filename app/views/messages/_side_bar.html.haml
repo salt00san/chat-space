@@ -5,15 +5,16 @@
         = current_user.name
       %ul.icons
         %li.list
-          = link_to new_group_path, class: "list--icon" do
+          = link_to new_group_path, class: "list--icon", title: "新しいグループを作成" do
             = icon('fas', 'edit',  class: "list--edit") 
         %li.list
-          = link_to edit_user_path(current_user), class: "list--icon" do
+          = link_to edit_user_path(current_user), class: "list--icon", title: "アカウント設定" do
             = icon('fas', 'cog',  class: "list--cog") 
   %ul.groups
     - current_user.groups.each do |group|
-      %li.group-lists 
-        = link_to '#' do
+      %li.group-name 
+        = link_to group_messages_path(group) do
           .group-name
             = group.name
-      %li.last-message まだメッセージはないよ
+      %li.last-message
+        = group.show_last_message

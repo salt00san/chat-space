@@ -11,8 +11,8 @@
     .edit
       = link_to edit_group_path(@group), class: "edit__btn", title: "グループを編集" do
         Edit
-  .message-list
-    .messages
+  .group-messages
+    .message-list
       = render @messages
   .form
     = form_for [@group, @message] do |f|

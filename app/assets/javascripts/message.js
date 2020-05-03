@@ -1,42 +1,44 @@
 $(function () {
   function buildHTML(message) {
     if (message.image) {
-      var html = `<div class="messages">
-      <div class="message-info">
-      <div class="message-info__member">
+      var html =
+        `<div class="messages">
+        <div class="message-info">
+          <div class="message-info__member">
       ${message.user_name}
-      </div>
-      <div class="message-info__date">
+          </div>
+          <div class="message-info__date">
       ${message.created_at}
-      </div>
-      </div>
-      <div class="messages__text">
-      <p class="messages__text">
+          </div>
+        </div>
+        <div class="messages__text">
+          <p class="messages__text">
       ${message.content}
-      </p>
-      <img class="messages__text__image" src="${message.image}">
-      </div>
+          </p>
+          <img class="messages__text__image" src="${message.image}">
+        </div>
       </div>`
-      return html;
     } else {
-      var html = `<div class="messages">
-      <div class="message-info">
-      <div class="message-info__member">
+      var html =
+        `<div class="messages">
+        <div class="message-info">
+          <div class="message-info__member">
       ${message.user_name}
-      </div>
-      <div class="message-info__date">
+          </div>
+          <div class="message-info__date">
       ${message.created_at}
-      </div>
-      </div>
-      <div class="messages__text">
-      <p class="messages__text">
+          </div>
+        </div>
+        <div class="messages__text">
+          <p class="messages__text">
       ${message.content}
-      </p>
-      </div>
+          </p>
+        </div>
       </div>`
-      return html;
     }
+    return html;
   }
+
   $('#new_message').on('submit', function (e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -52,7 +54,6 @@ $(function () {
       .done(function (data) {
         var html = buildHTML(data);
         var height = $('.message-list')[0].scrollHeight
-        // debugger
         $('.message-list').append(html);
         $('form')[0].reset();
         $('input').prop('disabled', false);

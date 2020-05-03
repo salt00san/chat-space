@@ -1,40 +1,38 @@
 $(function () {
   function buildHTML(message) {
     if (message.image) {
-      var html =
-        `<div class="messages">
-        <div class="message-info">
-          <div class="message-info__member">
-      ${message.user_name}
-          </div>
-          <div class="message-info__date">
-      ${message.created_at}
-          </div>
-        </div>
-        <div class="messages__text">
-          <p class="messages__text">
-      ${message.content}
-          </p>
-          <img class="messages__text__image" src="${message.image}">
-        </div>
-      </div>`
+      var html = `<div class="messages">
+                    <div class="message-info">
+                      <div class="message-info__member">
+                      ${message.user_name}
+                      </div>
+                      <div class="message-info__date">
+                      ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="messages__text">
+                      <p class="messages__text">
+                      ${message.content}
+                      </p>
+                      <img class="messages__text__image" src="${message.image}">
+                    </div>
+                  </div>`
     } else {
-      var html =
-        `<div class="messages">
-        <div class="message-info">
-          <div class="message-info__member">
-      ${message.user_name}
-          </div>
-          <div class="message-info__date">
-      ${message.created_at}
-          </div>
-        </div>
-        <div class="messages__text">
-          <p class="messages__text">
-      ${message.content}
-          </p>
-        </div>
-      </div>`
+      var html = `<div class="messages">
+                    <div class="message-info">
+                      <div class="message-info__member">
+                      ${message.user_name}
+                      </div>
+                      <div class="message-info__date">
+                      ${message.created_at}
+                      </div>
+                    </div>
+                    <div class="messages__text">
+                      <p class="messages__text">
+                      ${message.content}
+                      </p>
+                    </div>
+                  </div>`
     }
     return html;
   }

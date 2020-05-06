@@ -41,13 +41,13 @@ $(function () {
         for (var i = 0; i < inputs.length; i++) {
           registeredUserIds.push(Number(inputs[i].value))
         }
-        console.log(registeredUserIds)
+        // console.log(registeredUserIds)
         $("#user-search-result").empty();
         if (users.length !== 0) {
           users.forEach(function (user) {
-            console.log(user.id)
-            console.log(user.name)
-            console.log($.inArray(user.id, registeredUserIds))
+            // console.log(user.id)
+            // console.log(user.name)
+            // console.log($.inArray(user.id, registeredUserIds))
             if (registeredUserIds.indexOf(user.id) > -1) {
               return
             } else {

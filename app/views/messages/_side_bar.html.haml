@@ -13,7 +13,7 @@
   %ul.groups
     - current_user.groups.each do |group|
       %li.group-name 
-        = link_to group_messages_path(group) do
+        = link_to group_messages_path(group), id: "groups-messages" do
           .group-name
             = group.name
       %li.last-message

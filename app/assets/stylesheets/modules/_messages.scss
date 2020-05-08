@@ -67,8 +67,12 @@
           color: #ffffff;
           font-weight: bold;
           font-size: 15px;
+          text-decoration: none;
 
-          #groups-messages {
+          a {
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 15px;
             text-decoration: none;
           }
         }

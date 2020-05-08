@@ -66,8 +66,11 @@
         .group-name {
           color: #ffffff;
           font-weight: bold;
-          text-decoration: none;
           font-size: 15px;
+        }
+
+        .group-name a {
+          text-decoration: none;
         }
 
         .last-message {
